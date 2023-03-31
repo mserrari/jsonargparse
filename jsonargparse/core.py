@@ -123,6 +123,7 @@ class ActionsContainer(SignatureArguments, argparse._ActionsContainer):
                 nested_key = re.sub('^--', '', args[0])
                 if is_final_class(theclass):
                     kwargs.pop('help', None)
+                    kwargs.pop('required', None)
                     self.add_class_arguments(theclass, nested_key, **kwargs)
                 else:
                     self.add_dataclass_arguments(theclass, nested_key, **kwargs)
